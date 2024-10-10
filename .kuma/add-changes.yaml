@@ -1,0 +1,6 @@
+structure:
+  changes.json:
+    template: templates/ChangesJson.gtpl
+    data: 
+      {{range toYaml .data}}{{.}}
+      {{end}}
