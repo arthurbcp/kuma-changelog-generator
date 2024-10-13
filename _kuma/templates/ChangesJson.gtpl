@@ -1,7 +1,7 @@
 {{- $newRelease := dict "type" .data.changeType "description" .data.changeDescription -}}
 {{- $releases := .data.releases -}}
 {{- if eq .data.isRelease "n" -}}
-    {{- $unreleased := ($releases | get "[Unreleased]") | append $newRelease -}}
+    {{- $unreleased := ($releases | get "[Unreleased]") | prepend $newRelease -}}
     {{- $releases = $releases | set "[Unreleased]" $unreleased -}}
 {{- else -}}
    {{- $releaseKey := print "[" .data.changeVersion "] - "  (now | date "2006-01-02")  -}}
@@ -9,7 +9,7 @@
    {{- if $releases | hasKey $releaseKey -}}
       {{- $curReleases = ($releases | get $releaseKey)}}
    {{- end -}}
-   {{- $curReleases = $curReleases | append $newRelease -}}
+   {{- $curReleases = $curReleases | prepend $newRelease -}}
    {{- $releases = $releases | set $releaseKey $curReleases -}}
 {{- end -}}
 {
