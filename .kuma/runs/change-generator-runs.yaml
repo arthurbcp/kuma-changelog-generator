@@ -1,37 +1,37 @@
 add-changelog:
   description: "Add changelog"
   steps:
-    - input:
-        label: "What type of change is that?"
-        options:
-          - label: "Added"
-            value: "added"
-          - label: "Changed"
-            value: "changed"
-          - label: "Deprecated"
-            value: "deprecated"
-          - label: "Removed"
-            value: "removed"
-          - label: "Fixed"
-            value: "fixed"
-          - label: "Security"
-            value: "security"
-        out: changeType
-    - input:
-        label: "Describe your changes"
-        out: changeDescription
-    - input:
-        label: "What version is?"
-        out: changeVersion
-    - input:
-        label: "It's released?"
-        options:
-          - label: "Yes"
-            value: "y"
-          - label: "No"
-            value: "n"
-        out: isRelease
+    - form:
+        fields:
+        - select:
+            label: "What type of change is that?"
+            options:
+              - label: "Added"
+              - label: "Changed"
+              - label: "Deprecated"
+              - label: "Removed"
+              - label: "Fixed"
+              - label: "Security"
+            out: changeType
+        - input:
+            label: "Describe your changes"
+            placeholder: "e.g. Add a new feature"
+            out: changeDescription
+        - input:
+            label: "What version is?"
+            placeholder: "e.g.1 v1.0.0"
+            out: changeVersion
+        - select:
+            label: "It's released?"
+            options:
+              - label: "Yes"
+                value: "y"
+              - label: "No"
+                value: "n"
+            out: isRelease
+
     - log: "adding [{{.data.changeType}}] - {{.data.changeDescription}}"
+ 
     - load:
         from: "changes.json"
         out: releases
