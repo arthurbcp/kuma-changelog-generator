@@ -1,6 +1,0 @@
-structure:
-  CHANGELOG.md:
-    template: templates/Changelog.gtpl
-    data: 
-      {{range toYaml .data}}{{.}}
-      {{end}}
