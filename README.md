@@ -15,7 +15,8 @@ kuma exec module -m kuma-changelog-generator -r add-change
 ```bash
 kuma exec module -m kuma-changelog-generator -r create-release
 ```
-![out](https://github.com/user-attachments/assets/3b48198c-07af-4147-a9f8-afe6a2b29f29)
+![out](https://github.com/user-attachments/assets/f186efd4-111a-4261-a50f-c131e1566d78)
+
 
 ### Kuma docs 
 https://kuma-framework.vercel.app/
