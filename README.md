@@ -8,14 +8,14 @@ Create a version history file for your projects based on the [Keep a Changelog](
 ```bash
 mr exec module -m changelog-generator -r add-change
 ```
-![out](https://github.com/user-attachments/assets/85a01f8c-8b45-4f1b-81c3-71b11c7eebe0)
+![out](https://github.com/user-attachments/assets/d2f54ba3-1e96-4dcd-b1dc-655acbf35031)
 
 ## Create release
 
 ```bash
 mr exec module -m changelog-generator -r create-release
 ```
-![out](https://github.com/user-attachments/assets/f186efd4-111a-4261-a50f-c131e1566d78)
+![out](https://github.com/user-attachments/assets/783ddd8b-9a36-41ab-b24a-ccacb01f88f8)
 
 
 ### Mr. Smith docs 

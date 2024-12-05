@@ -51,7 +51,7 @@ add-change:
                     out: changeDescription
         - when:
             condition: "{{ not (fileExists \"unreleased.json\") }}"
-            run: create-unreleased-file
+            pipeline: create-unreleased-file
         
         - load:
             from: unreleased.json
